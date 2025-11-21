@@ -20,16 +20,19 @@
         <p>USM Chapter</p>
       </div>
     </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="hamburger" aria-hidden="true"></span>
+    </button>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#join">Join</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScToXbnv6JjncAEzW4OwCSl7fuSXsn9aFP0jivcJ_7AAPz_mQ/viewform" target="_blank" rel="noopener">Join</a></li>
       </ul>
+      <a href="https://linktr.ee/usmgwc" class="btn-primary nav-cta">Join Us</a>
     </nav>
-    <a href="#join" class="btn-primary">Join Us</a>
   </header>
 
   <!-- HERO SECTION -->
@@ -40,22 +43,117 @@
       <h2><span>Girls Who Code</span> <br><strong>at USM</strong></h2>
       <p>Empowering the next generation of female technologists through community, education, and real-world coding experience.</p>
       <div class="stats">
-        <div><h3>50+</h3><p>Active Members</p></div>
-        <div><h3>25+</h3><p>Events Hosted</p></div>
-        <div><h3>3</h3><p>Years Active</p></div>
+        <div><h3>75+</h3><p>Active Members</p></div>
+        <div><h3>3</h3><p>Events Hosted</p></div>
+        <div><h3>1</h3><p>Years Active</p></div>
       </div>
       <div class="hero-buttons">
-        <a href="#join" class="btn-primary">Join The Loop</a>
+        <!-- Button now opens a Join modal with QR. The data-qr path should point to your saved image file. -->
+        <button id="join-loop-btn" class="btn-primary" data-url="https://girlswhocode.com/" data-qr="assets/qr-cl56644.png" data-code="CL56644">Join The Loop</button>
         <a href="#about" class="btn-outline">Learn More</a>
       </div>
     </div>
   </section>
 
+  <!-- Join modal for 'Join The Loop' (Fall 2025 form + QR code) -->
+  <div id="join-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-overlay" data-close="true"></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" aria-label="Close join dialog">✕</button>
+      <div class="modal-inner join-modal-inner">
+        <div class="join-header">
+          <button class="tab-btn active" data-tab="form">Fall 2025 Form</button>
+          <button class="tab-btn" data-tab="qr">QR Code</button>
+        </div>
+
+        <div class="join-body">
+          <div class="join-form" data-tab-content="form">
+            <h3>Join The Loop — Fall 2025</h3>
+            <p>Please fill out this short form to join our Fall 2025 cohort. We'll contact you with next steps.</p>
+            <form id="fall2025Form">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+
+              <label for="major">Major / Program</label>
+              <input id="major" name="major" type="text" />
+
+              <label for="year">Year (e.g., Freshman, Sophomore)</label>
+              <input id="year" name="year" type="text" />
+
+              <label for="interest">What are you interested in learning?</label>
+              <textarea id="interest" name="interest" rows="3"></textarea>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Submit</button>
+                <button type="button" class="btn-outline" id="form-cancel">Cancel</button>
+              </div>
+            </form>
+            <div id="form-success" class="form-success" hidden>
+              <p>Thanks! Your response has been recorded. We'll be in touch about Fall 2025.</p>
+            </div>
+          </div>
+
+          <div class="join-qr" data-tab-content="qr" hidden>
+            <div class="join-qr-wrap">
+              <img src="" alt="Join QR code" class="join-qr-image" />
+              <p class="join-code">CL56644</p>
+            </div>
+            <div class="join-actions">
+              <p>Scan this QR code or open the join link.</p>
+              <a href="#" class="btn-outline modal-cta join-open-link" target="_blank" rel="noopener">Open site</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ABOUT -->
   <section id="about" class="section about">
-    <h2>About <span>GWC USM</span></h2>
-    <p class="center-text">Girls Who Code USM is a student-led organization dedicated to closing the gender gap in technology by inspiring, educating, and equipping students with the computing skills needed to pursue 21st-century opportunities.</p>
+    <div class="about-inner">
+      <h2 class="section-title">About <span>GWC USM</span></h2>
+      <p class="lead center-text">Girls Who Code at The University of Southern Mississippi is an organization dedicated to empowering students to excel in the technology field through skill-building workshops, collaborative projects, and networking opportunities. At GWC USM, we embrace the principles of diversity and innovation. Our approach is guided by the pillars of Ask - Learn - Teach - Impact, fostering a collaborative and inclusive environment.
+        
+      Our mission is to provide enriching and inclusive space where students from all backgrounds can grow their skills, build knowledge, and connect with the broader tech community. We welcome all students regardless of gender identity who are passionate about coding, innovation, and collaboration.</p>
 
+      <div class="features">
+        <article class="feature-card">
+          <div class="icon-circle" aria-hidden="true">
+            <!-- heart icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#b95df0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 8.6c0 6-8.8 11-8.8 11S3.2 14.6 3.2 8.6a4.4 4.4 0 018.8-2.2 4.4 4.4 0 018.8 2.2z"/></svg>
+          </div>
+          <h3>Community</h3>
+          <p>Building a supportive network of women in tech who lift each other up and create lasting friendships.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon-circle" aria-hidden="true">
+            <!-- target icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ff8fc1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3>Education</h3>
+          <p>Providing hands-on learning opportunities through workshops, hackathons, and coding challenges.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="icon-circle" aria-hidden="true">
+            <!-- lightning icon -->
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#e8a8ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Empowerment</h3>
+          <p>Inspiring confidence and leadership skills to help members excel in their future tech careers.</p>
+        </article>
+      </div>
+
+      <div class="mission-box" role="region" aria-label="Our mission">
+        <h4>Our Mission</h4>
+        <blockquote>"To inspire, educate, and equip students with the computing skills to pursue 21st-century opportunities and to use technology to solve problems that matter to them, their families, their communities, and the world."</blockquote>
+        <p class="cite">– Girls Who Code</p>
+      </div>
+    </div>
   </section>
 
   <!-- EVENTS -->
@@ -63,7 +161,42 @@
     <h2>Upcoming <span>Events</span></h2>
     <p class="center-text">Join us for exciting events that will expand your coding skills, build your network, and inspire your tech journey.</p>
 
+    <div class="events-controls">
+      <div class="filter-group" role="tablist" aria-label="Event frequency filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="weekly" role="tab">Weekly</button>
+        <button class="filter-btn" data-filter="monthly" role="tab">Monthly</button>
+        <button class="filter-btn" data-filter="annual" role="tab">Annual</button>
+      </div>
+    </div>
+
+    <div id="events-container" class="event-grid" aria-live="polite">
+      <!-- Cards rendered by script.js -->
+    </div>
+
+    <!-- Event detail modal -->
+    <div id="event-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-overlay" data-close="true"></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" aria-label="Close event details">✕</button>
+        <div class="modal-inner">
+          <img src="" alt="" class="modal-image" />
+          <div class="modal-content">
+            <h3 class="modal-title"></h3>
+            <p class="modal-desc"></p>
+            <ul class="modal-meta">
+              <li class="modal-date"></li>
+              <li class="modal-location"></li>
+            </ul>
+            <a href="#" class="btn-outline modal-cta">Register / Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
+
+  <script src="script.js"></script>
 
   <!-- FOOTER -->
   <footer>
@@ -83,7 +216,7 @@
       </div>
       <div class="footer-col">
         <h4>Get In Touch</h4>
-        <p>gwc.usm@gmail.com</p>
+        <p>usmgirlswhocode@gmail.com</p>
         <p>@gwc_southernmiss</p>
         <p>University of Southern Mississippi</p>
       </div>
